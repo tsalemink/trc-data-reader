@@ -143,7 +143,7 @@ class TestTRCData(unittest.TestCase):
     def test_parse_data_11(self):
         # Test parsing a file with non-native line endings.
         data = TRCData()
-        data.parse(TEST_DATA_11)
+        data.parse(TEST_DATA_11, line_sep='\r\n')
         self.assertIn('FileName', data)
         self.assertEqual(2, data['NumFrames'])
         self.assertEqual(2, len(data['Markers']))
